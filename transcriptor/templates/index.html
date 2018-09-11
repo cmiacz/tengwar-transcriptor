@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tengwar for slavic languages</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/tengwar.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tengwar.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Tengwar for slavic languages</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span id="language"></span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Choose language <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                {% for lang in languages %}
+                    <li><a class="lang-setter" href="#">{{ lang }}</a></li>
+                {% endfor %}
+                    <li role="separator" class="divider"></li>
+                    <li><a class="lang-setter" href="#">Auto</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- menu sidebar -->
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a href="#table">Tengwar table</a></li>
+                    <li><a href="#transcription">Transcription</a></li>
+                </ul>
+            </div>
+            <!-- menu sidebar -->
+
+            <div class="col-sm-8 col-sm-offset-3 col-md-offset-2 main">
+
+                <h2 class="sub-header" id="table">Tengwar table</h2>
+                <div id="tengwarTable" class="table-responsive"></div>
+
+                <h2 class="sub-header" id="transcription">Transcription</h2>
+                <div class="row">
+                    <div lass="col-xs-12">
+
+                        Source text <span id="detected" style="display:none"></span> <br>
+                        <textarea id="sourceText" class="form-control" rows="9"></textarea>
+
+                        Result<img id="loader" style="display:none" src="img/loader.gif" /> <br>
+                        <textarea id="resultText" class="form-control tengwar-text" rows="9"></textarea>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

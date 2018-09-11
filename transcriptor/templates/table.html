@@ -1,0 +1,16 @@
+<table class="table table-sm table-bordered">
+    {% for section_name, section_table in tengwar_table %}
+        <tr>
+            <td class="header" colspan="4">{{ section_name }}</td>
+        </tr>
+        {% for tengwar, description in section_table %}
+            {% if loop.index % 4 == 1  %}
+                <tr>
+            {% endif %}
+                    <td><div class="tengwar">{{ tengwar }}</div><div class="tengwar-desc">{{description.replace("  ", "<br>")|safe}}</div></td> 
+            {% if loop.index % 4 == 0  %}
+                </tr>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</table>

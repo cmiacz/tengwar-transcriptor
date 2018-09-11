@@ -1,0 +1,42 @@
+@font-face {
+font-family: 'Tengwar Quenya';
+font-style: normal;
+font-weight: normal;
+src: local('Tengwar Quenya'), url('../fonts/tengwar_quenya/QUENYA.TTF') format('truetype');
+}
+
+td.header {
+    text-align: center;
+    vertical-align: middle;
+}
+td.center {
+    text-align: center;
+}
+
+.grey    { color: #BBBBBB }
+.red     { color: #8B0000 }
+.blue    { color: #000080 }
+.green   { color: #006400 }
+.purple  { color: #8B008B }
+
+.tengwar {
+    width: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 4px;
+    font-family: Tengwar Quenya;
+    font-size: 18pt;
+}
+
+.tengwar-desc {
+    width: 64px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 4px;
+}
+
+.tengwar-text {
+    font-family: Tengwar Quenya;
+    font-size: 18pt;
+}
